@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 				}
 				case 's': {
 					str = va_arg(args, char *);
-					while (*str)
+					while (*str != '\0')
 					{
 						count += write(1, str, 1);
 						str++; }
