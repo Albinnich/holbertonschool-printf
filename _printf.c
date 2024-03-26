@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <stdarg.h>
+#include "main.h"
 /**
  * _printf - function that produces output acc to format
  * @format: character string
