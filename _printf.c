@@ -1,50 +1,49 @@
 #include "main.h"
 /**
- * _printf - function that produces output acc to format
+ * _printf - customized function for 'c', 's' and '%'
  * @format: character string
- * Return: number of characters written
+ * Return: number of characters printed (except null byte)
  */
 int _printf(const char *format, ...)
 {
 	va_list args;
 	int count = 0;
+	char conversionSpecifier;
 
 	va_start(args, format);
-
 	while (*format)
 	{
 	if (*format == '%')
-	{
-		format++;
-		switch (*format)
+	{ format++;
+		conversionSpecifier = *format;
+		switch (conversionSpecifier)
 		{
 			case 'c': {
 			char c = va_arg(args, int);
 
-			count += write(1, &c, 1);
+			putchar(c);
+			count++;
 			break; }
 			case 's': {
-			const char *str = va_arg(args, const char *);
-			int len = 0;
+			char *str = va_arg(args, char *);
 
-			while (str[len])
-			{
-				len++;
-			}
-			count += write(1, str, len);
+			while (*str)
+			{ putchar(*str);
+				str++;
+				count++; }
 			break; }
 			case '%': {
-			count += write(1, "%", 1);
+			putchar('%');
+			count++;
 			break; }
-			}
+		default:
+		break;
+	}
 	}
 	else
-	{
-		count += write(1, format, 1);
-	}
-		format++;
-	}
+	{ putchar(*format);
+		count++; }
+	format++; }
 	va_end(args);
 	return (count);
 }
-
