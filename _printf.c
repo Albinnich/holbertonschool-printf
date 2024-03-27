@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0;
 	char conversionSpecifier;
+	const char *nullStr = "(null)";
 
 	va_start(args, format);
 	while (*format)
@@ -27,10 +28,21 @@ int _printf(const char *format, ...)
 			case 's': {
 			char *str = va_arg(args, char *);
 
+			if (str == NULL)
+			{
+				while (*nullStr)
+				{
+					putchar(*nullStr);
+					nullStr++;
+					count++; }
+			}
+			else
+			{
 			while (*str)
 			{ putchar(*str);
 				str++;
 				count++; }
+			}
 			break; }
 			case '%': {
 			putchar('%');
