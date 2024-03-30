@@ -6,13 +6,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
-
-int printf_string(va_list val);
-int printf_char(va_list val);
-int _putchar(char c);
+typedef struct operations
+{
+              char *spec;
+              int (*f)(va_list);
+} ops;
 int _printf(const char *format, ...);
-int _strlen(char *str);
-int _strlenc(const char *str);
-int print_37(void);
+int print_char(va_list args);
+int print_string(va_list args);
+int print_percent(va_list args);
+int print_decimal(va_list args);
+int print_integer(va_list args);
+int (*get_function(char ch))(va_list);
 #endif
