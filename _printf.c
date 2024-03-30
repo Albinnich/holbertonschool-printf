@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 	va_list list;
 	int count = 0;
 	int i;
+
 	if (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(list, format);
@@ -24,6 +25,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				int (*fc)(va_list) = get_function(format[i + 1]);
+
 				if (fc)
 				{
 					count += fc(list);
