@@ -8,8 +8,8 @@
 
 typedef struct operations
 {
-              char *spec;
-              int (*f)(va_list);
+char *spec;		
+int (*f)(va_list);
 } ops;
 int _printf(const char *format, ...);
 int print_char(va_list args);
