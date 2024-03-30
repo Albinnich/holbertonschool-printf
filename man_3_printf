@@ -1,4 +1,4 @@
-.TH _printf 3 "29 March 2024" “1” " _printf man page"
+.TH _printf 3 "30 March 2024" “1” " _printf man page"
 .SH NAME
 printf - formatted output conversion function
 .SH SYNOPSIS
@@ -47,6 +47,6 @@ The following example demonstrates the usage of the \B_printf\B function:
 .SH SEE ALSO
 printf(3)
 .SH BUGS
-None known.
+Report any bugs that you come across to the mails: 8921@holbertonstudents.com , 9078@holbertonstudents.com .
 .SH AUTHOR
  Albina Ismayilova && Aysu Mammadova
