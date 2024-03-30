@@ -27,6 +27,7 @@ int _printf(const char *format, ...)
 			{
 
 				int (*fc)(va_list) = get_function(format[i + 1]);
+
 				if (fc)
 
 				{
