@@ -8,7 +8,7 @@
 
 typedef struct operations
 {
-char *spec;		
+char *spec;
 int (*f)(va_list);
 } ops;
 int _printf(const char *format, ...);
