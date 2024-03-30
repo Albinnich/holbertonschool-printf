@@ -77,7 +77,7 @@ int print_decimal(va_list args)
 		digit_count *= 10;
 	while (digit_count != 0)
 	{
-		char digit_char = ((abs_value / digit_count) % 10) + '0';
+		char digit_char = ((xyz_value / digit_count) % 10) + '0';
 
 		count += write(1, &digit_char, 1);
 		digit_count /= 10;
